@@ -1,0 +1,15 @@
+﻿insert into books (id, price, name, category, date_of_fabrication) values (1, 85.23, 'Pride and Prejudice', 'Biography', '1922-01-20');
+insert into books (id, price, name, category, date_of_fabrication) values (2, 458.63, '1984', 'Fiction', '1912-08-09');
+insert into books (id, price, name, category, date_of_fabrication) values (3, 980.88, 'Lord of the Flies', 'Science Fiction', '1906-06-08');
+insert into books (id, price, name, category, date_of_fabrication) values (4, 39.92, 'The Catcher in the Rye', 'Mystery', '1967-05-27');
+insert into books (id, price, name, category, date_of_fabrication) values (5, 915.97, 'Animal Farm', 'Fantasy', '1963-03-17');
+insert into books (id, price, name, category, date_of_fabrication) values (6, 975.19, 'Brave New World', 'History', '1983-12-30');
+insert into books (id, price, name, category, date_of_fabrication) values (7, 851.68, '1984', 'Biography', '1928-11-20');
+insert into books (id, price, name, category, date_of_fabrication) values (8, 93.23, 'To Kill a Mockingbird', 'Mystery', '1901-11-25');
+insert into books (id, price, name, category, date_of_fabrication) values (9, 73.42, 'Lord of the Flies', 'Mystery', '1991-10-13');
+insert into books (id, price, name, category, date_of_fabrication) values (10, 789.06, 'The Hobbit', 'Fiction', '2018-08-05');
+insert into books (id, price, name, category, date_of_fabrication) values (11, 210.33, 'The Hobbit', 'Fiction', '1911-06-18');
+insert into books (id, price, name, category, date_of_fabrication) values (12, 605.1, 'To Kill a Mockingbird', 'Fiction', '1906-03-07');
+insert into books (id, price, name, category, date_of_fabrication) values (13, 31.08, 'The Catcher in the Rye', 'Fantasy', '1966-05-07');
+insert into books (id, price, name, category, date_of_fabrication) values (14, 1.36, 'Fahrenheit 451', 'Fantasy', '1913-10-02');
+insert into books (id, price, name, category, date_of_fabrication) values (15, 79.99, 'The Great Gatsby', 'Fantasy', '1975-08-09');
