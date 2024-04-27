@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "3c2538f9-5cb2-4303-aee3-87d02e2fc9dd",
+		"name": "crud-products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33348053"
+	},
+	"item": [
+		{
+			"name": "GetAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7178/api/v1/Products/api/v1/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7178",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"api",
+						"v1",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7119/products/api/v1/getName/pepperoni pizza",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7119",
+					"path": [
+						"products",
+						"api",
+						"v1",
+						"getName",
+						"pepperoni pizza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllProdByPrice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7119/products/api/v1/getAllByPrice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7119",
+					"path": [
+						"products",
+						"api",
+						"v1",
+						"getAllByPrice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostCreateProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": 0,\r\n  \"name\": \"test\",\r\n  \"category\": \"asd\",\r\n  \"dateOfFabrication\": \"2024-03-10T20:26:58.907Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7178/api/v1/Products/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7178",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutUpdateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": 10,\r\n  \"name\": \"test\"\r\n}\r\n \r\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7178/api/v1/Products/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7178",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProduct",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7178/api/v1/Products/delete/1?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7178",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"delete",
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllNotFound",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7178/api/v1/Products/api/v1/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7178",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"api",
+						"v1",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostCreateBadRequest400",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": -100,\r\n  \"name\": \"string\",\r\n  \"category\": \"string\",\r\n  \"dateOfFabrication\": \"2024-04-21T19:18:32.849Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7178/api/v1/Products/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7178",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateNotFound",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 40,\r\n  \"price\": 10,\r\n  \"name\": \"string\",\r\n  \"category\": \"string\",\r\n  \"dateOfFabrication\": \"2024-04-21T19:24:09.214Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7178/api/v1/Products/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7178",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateBadRequest",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 4,\r\n  \"price\": -1000,\r\n  \"name\": \"string\",\r\n  \"category\": \"string\",\r\n  \"dateOfFabrication\": \"2024-04-21T19:25:37.163Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7178/api/v1/Products/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7178",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7178/api/v1/Products/delete/1?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7178",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"delete",
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

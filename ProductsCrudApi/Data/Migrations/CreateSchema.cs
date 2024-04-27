@@ -8,7 +8,7 @@ public class CreateSchema:Migration
 {
     public override void Up()
     {
-        Create.Table("books")
+        Create.Table("products")
             .WithColumn("id").AsInt32().PrimaryKey().Identity()
             .WithColumn("price").AsDouble().NotNullable()
             .WithColumn("name").AsString(128).NotNullable()

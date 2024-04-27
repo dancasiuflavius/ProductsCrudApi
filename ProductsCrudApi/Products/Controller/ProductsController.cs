@@ -26,6 +26,11 @@ public class ProductsController : ProductApiController
         _productQueryService = productQueryService;
         _productCommandService = productCommandService;
     }
+    //public ProductsController(IProductQuerryService productQueryService, IProductComandService productCommandService)
+    //{
+    //    _productQueryService = productQueryService;
+    //    _productCommandService = productCommandService;
+    //}
 
 
 
@@ -85,15 +90,34 @@ public class ProductsController : ProductApiController
 
     }
    // [HttpPut("api/v1/update")]
-    public override async Task<ActionResult<Product>> UpdateProduct([FromQuery] int id, [FromBody] UpdateProductRequest request)
+    //public override async Task<ActionResult<Product>> UpdateProduct([FromQuery] int id, [FromBody] UpdateProductRequest request)
+    //{
+    //    _logger.LogInformation(message: $"Rest request: Create product with DTO:\n{request}");
+    //    try
+    //    {
+
+    //        Product response = await _productCommandService.UpdateProduct(id,request);
+
+    //        return Accepted(response);
+    //    }
+    //    catch (InvalidPrice ex)
+    //    {
+    //        _logger.LogWarning(ex.Message);
+    //        return BadRequest(ex.Message);
+    //    }
+    //    catch (ItemDoesNotExist ex)
+    //    {
+    //        _logger.LogWarning(ex.Message);
+    //        return NotFound(ex.Message);
+    //    }
+    //}
+    public override async Task<ActionResult<Product>> UpdateProduct(UpdateProductRequest productRequest)
     {
-        _logger.LogInformation(message: $"Rest request: Create product with DTO:\n{request}");
         try
         {
+            var product = await _productCommandService.UpdateProduct(productRequest);
 
-            Product response = await _productCommandService.UpdateProduct(id,request);
-
-            return Accepted(response);
+            return Accepted("", product);
         }
         catch (InvalidPrice ex)
         {
@@ -104,6 +128,7 @@ public class ProductsController : ProductApiController
             return NotFound(ex.Message);
         }
     }
+
 
     //[HttpDelete("api/v1/delete")]
     public override async Task<ActionResult<Product>> DeleteProduct([FromQuery] int id)

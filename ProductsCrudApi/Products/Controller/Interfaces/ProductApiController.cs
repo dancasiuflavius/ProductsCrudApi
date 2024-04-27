@@ -22,7 +22,8 @@ public abstract class ProductApiController:ControllerBase
     [ProducesResponseType(statusCode: 200, type: typeof(Product))]
     [ProducesResponseType(statusCode: 400, type: typeof(String))]
     [ProducesResponseType(statusCode: 404, type: typeof(String))]
-    public abstract Task<ActionResult<Product>> UpdateProduct([FromQuery] int id,[FromBody] UpdateProductRequest productRequest);
+    //public abstract Task<ActionResult<Product>> UpdateProduct([FromQuery] int id,[FromBody] UpdateProductRequest productRequest);
+    public abstract Task<ActionResult<Product>> UpdateProduct([FromBody] UpdateProductRequest productRequest);
 
     [HttpDelete("delete/{id}")]
     [ProducesResponseType(statusCode: 200, type: typeof(Product))]

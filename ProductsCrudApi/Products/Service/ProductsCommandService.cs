@@ -17,6 +17,7 @@ namespace ProductsCrudApi.Products.Service
             _repository = repository;
         }
 
+
         public async Task<Product> CreateProduct(CreateProductRequest productRequest)
         {
             if(productRequest.Price < 0)
@@ -49,6 +50,21 @@ namespace ProductsCrudApi.Products.Service
             product = await _repository.UpdateAsync(id,productRequest);
             return product;
         }
+        public async Task<Product> UpdateProduct(UpdateProductRequest productRequest)
+        {
+            if (productRequest.Price < 0)
+            {
+                throw new InvalidPrice(Constants.INVALID_PRICE);
+            }
+
+            Product product = await _repository.GetByIdAsync(productRequest.Id);
+            if (product == null)
+            {
+                throw new ItemDoesNotExist(Constants.PRODUCT_DOES_NOT_EXIST);
+            }
+            product = await _repository.UpdateAsync(productRequest);
+            return product;
+        }
         public async Task<Product> DeleteProduct(int id)
         {
             Product product = await _repository.GetByIdAsync(id);
@@ -60,5 +76,6 @@ namespace ProductsCrudApi.Products.Service
             await _repository.DeleteAsync(id);
             return product;
         }
+
     }
 }

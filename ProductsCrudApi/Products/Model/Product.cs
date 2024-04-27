@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProductsCrudApi.Products.Model
 {
-    [Table("books")]
+    [Table("products")]
     public class Product
     {
         [Key]
@@ -27,7 +27,12 @@ namespace ProductsCrudApi.Products.Model
 
         public DateTime DateOfFabrication { get; set; }
 
+        public override bool Equals(object? obj)
+        {
+            Product oProd = (Product)obj;
 
+            return this.Id == oProd.Id && this.Category == oProd.Category;
+        }
 
     }
 }
